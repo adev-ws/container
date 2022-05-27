@@ -1,0 +1,33 @@
+{
+  "name": "adevws/container",
+  "description": "Dependency Injection e ServiceContainer simples",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alessandro",
+      "email": "alessandro@adev.ws"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "adevws\\Container\\" : "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "adevws\\Container\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "psr/container": "^2.0"
+  },
+  "require-dev": {
+    "pestphp/pest": "^1.21"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
