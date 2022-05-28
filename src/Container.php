@@ -9,6 +9,34 @@ use Psr\Container\ContainerInterface;
 class Container extends ContainerResolver implements ContainerInterface {
 
     /**
+     * Instância global do container caso ela existir
+     *
+     * @var ContainerInterface|null
+     */
+    protected static ?ContainerInterface $instance = null;
+
+    /**
+     * Retorna a instância global de container
+     *
+     * @return ContainerInterface|null
+     */
+    public static function getInstance(): ?ContainerInterface
+    {
+        return static::$instance;
+    }
+
+    /**
+     * Salva instância global do container
+     *
+     * @param ContainerInterface $container
+     * @return ContainerInterface
+     */
+    public static function setInstance(ContainerInterface $container): ContainerInterface
+    {
+        return static::$instance = $container;
+    }
+
+    /**
      * @param string $abstract
      * @param null|string|callable $concrete
      * @param array $arguments
