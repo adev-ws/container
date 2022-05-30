@@ -18,9 +18,9 @@ class Container extends ContainerResolver implements ContainerInterface {
     /**
      * Retorna a instância global de container
      *
-     * @return ContainerInterface|null
+     * @return ContainerInterface|static|Container|null
      */
-    public static function getInstance(): ?ContainerInterface
+    public static function getInstance(): ContainerInterface|static|Container|null
     {
         return static::$instance;
     }
@@ -29,9 +29,9 @@ class Container extends ContainerResolver implements ContainerInterface {
      * Salva instância global do container
      *
      * @param ContainerInterface $container
-     * @return ContainerInterface
+     * @return ContainerInterface|static|Container
      */
-    public static function setInstance(ContainerInterface $container): ContainerInterface
+    public static function setInstance(ContainerInterface $container): ContainerInterface|static|Container
     {
         return static::$instance = $container;
     }
